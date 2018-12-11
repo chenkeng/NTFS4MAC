@@ -1,12 +1,8 @@
 <template>
     <div v-loading="loading">
         <mu-flexbox>
-            <mu-flexbox-item class="flex-demo">
-                <h2>{{$t('messages.title')}}</h2>
-            </mu-flexbox-item>
-            <mu-flexbox-item class="flex-demo">
                 <mu-raised-button @click="refreshDevice" :label="$t('messages.refresh_button')" class="demo-raised-button" primary/>
-            </mu-flexbox-item>
+                <mu-raised-button @click="rejectDevice" :label="$t('messages.reject_button')" class="demo-raised-button" primary/>
         </mu-flexbox>
 
         <mu-list>
@@ -15,15 +11,13 @@
                 <mu-avatar slot="leftAvatar">
                     <i class="iconfont icon-cipan"></i>
                 </mu-avatar>
-                <mu-linear-progress slot="describe" style="min-width: 200px;width: 200px;" mode="determinate"
+                <mu-linear-progress class="line-progress" slot="describe"  mode="determinate"
                                     :max="parseInt(item.device_info._Volume_Total_Space)"
                                     :value="parseInt(item.device_info._Volume_Used_Space)"/>
-                <div style="display: flex;flex-direction: row;padding-right: 100px;" slot="right">
-                    <span v-bind:class="{green:true}">R</span>
-                    <span>&nbsp;&nbsp;</span>
-                    <span v-bind:class="{green:!item.read_only,red:item.read_only}">W</span>
-                </div>
-
+                  <div class="authority" slot="right">
+                      <span v-bind:class="{green:true}">可读（R）</span>
+                      <span v-bind:class="{green:!item.read_only,red:item.read_only}">可写（W）</span>
+                  </div>
             </mu-list-item>
         </mu-list>
 
@@ -58,7 +52,7 @@
 </template>
 
 <script>
-import { getDevices, openInFinder, mountDevices } from "@/utils/utils";
+import { getDevices, openInFinder, mountDevices,allRejected } from "@/utils/utils";
 
 export default {
   name: "DevicesList",
@@ -95,6 +89,13 @@ export default {
           this.devices = [];
           this.loading = false;
         });
+    },
+    rejectDevice(){
+      allRejected().then(res=>{
+        console.log("all device rejected !");
+      }).catch(e=>{
+        console.log("rejectd errors !");
+      })
     },
     handleClose(e) {
       this.open = false;
@@ -170,6 +171,27 @@ export default {
 </script>
 
 <style scoped>
+.mu-flexbox .mu-raised-button{
+  margin:40px auto 20px;
+}
+.mu-list>div{
+  /* background:#e0e0e0; */
+  border-bottom:1px solid #eee;
+}
+.authority{
+  display: flex;
+  flex-direction: row;
+  padding-right: 100px;
+}
+.authority span{
+  width:80px;
+}
+.line-progress{
+  width:60%;
+}
+.mu-tr .mu-td:nth-child(1){
+  width:60px;
+}
 .green {
   color: green;
 }

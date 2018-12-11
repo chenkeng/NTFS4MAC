@@ -11,10 +11,11 @@ export default {
         val: 'en'
     }],
     messages: {
-        tab_home: '主页',
+        tab_home: '列表',
         tab_setting: '设置',
         tab_about: '关于',
         refresh_button: "刷新设备列表",
+        reject_button:"全部弹出",
         title: "设备列表",
         mount_open:"挂载并打开",
         mount:"挂载",

@@ -11,10 +11,11 @@ export default {
         val: 'en'
     }],
     messages: {
-        tab_home: 'Home',
+        tab_home: 'List',
         tab_setting: 'Setting',
         tab_about: 'About',
         refresh_button: "Refresh Devices",
+        reject_button:"All Rejected",
         title: "Devices List",
         mount_open:"Mount and Open",
         mount:"Mount",

@@ -38,41 +38,38 @@
 
         <div v-if="$i18n.locale=='en'">
             <mu-row gutter>
-                <mu-col width="15" tablet="15" desktop="15"></mu-col>
-                <mu-col width="70" tablet="70" desktop="70">
-                    <h3>Please sponsor me so that I can develop better software</h3>
+                <mu-col class="header-title" width="70" tablet="70" desktop="70">
+                    <h3>If u sponsor me , I can develop better software</h3>
                 </mu-col>
-                <mu-col width="15" tablet="15" desktop="15"></mu-col>
             </mu-row>
             <mu-row gutter>
-                <mu-col width="15" tablet="15" desktop="15"></mu-col>
-                <mu-col width="35" tablet="35" desktop="35">
-                    &nbsp;&nbsp;WeChat<br>
-                    <img src="../assets/wx.png" width="150px" height="150px" alt="">
-                </mu-col>
-                <mu-col width="35" tablet="35" desktop="35">
-                    &nbsp;&nbsp;AliPay<br>
-                    <img src="../assets/zfb.png" width="150px" height="150px" alt="">
-
-                </mu-col>
-                <mu-col width="15" tablet="15" desktop="15"></mu-col>
+                <div class="scan-icon">
+                        <mu-col width="35" tablet="35" desktop="35">
+                            <p>wechat</p>   
+                            <img src="../assets/wx.png" width="150px" height="150px" alt="">
+                        </mu-col>
+                        <mu-col width="35" tablet="35" desktop="35">
+                            <p>alipay</p>
+                            <img src="../assets/zfb.png" width="150px" height="150px" alt="">
+                        </mu-col>   
+                </div>
             </mu-row>
             <mu-row gutter>
-                <mu-col width="15" tablet="15" desktop="15"></mu-col>
-                <mu-col width="70" tablet="70" desktop="70">
-               <pre>
-The project relies on the Mac system diskutil, mount, umount, mount_ntfs, open, command line tool,If you have problems, check to see if these tools are working properly.
-                   <br>
+                <div class ="tips">
+                    <ul>
+                        <li>
+This soft relies on the Mac system's command like diskutil, mount, umount, mount_ntfs, open,If you have problems, check these tools first.
+                   </li>
+                   <li>
 The project has been open source on github and welcomes developers to join and improve functionality.
-Making address: <a href="javascript:void(0)" @click="open('https://github.com/Sailiy/ntfsx')">https://github.com/Sailiy/ntfsx</a>
-                   <br>
-My ability is not only that, if you can give me good job opportunities.
-Please email to: <a href="mailto:sailiy@126.com">sailiy@126.com</a>
-                   <br>
-Thanks to the developers of electron, vue, electronic-vue, Muse-UI, element-UI.
-               </pre>
-                </mu-col>
-                <mu-col width="15" tablet="15" desktop="15"></mu-col>
+Making address: <a href="javascript:void(0)" @click="open('https://github.com/Sailiy/ntfsx')">chenchaohan@live.com</a>
+                   </li>
+                
+                    <li>
+    Thanks to the developers of electron, vue, electronic-vue, Muse-UI, element-UI.
+                </li>
+               </ul>
+               </div>
             </mu-row>
         </div>
 

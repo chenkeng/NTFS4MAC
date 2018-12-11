@@ -1,12 +1,10 @@
 <template>
     <div>
-        <mu-flexbox>
-            <mu-flexbox-item class="flex-demo">
+        <!-- <mu-flexbox>
+        
                 <h2>{{$t('messages.tab_setting')}}</h2>
-            </mu-flexbox-item>
-            <mu-flexbox-item class="flex-demo">
-            </mu-flexbox-item>
-        </mu-flexbox>
+           
+        </mu-flexbox> -->
         <mu-list>
             <mu-list-item :title="$t('messages.general')" toggleNested>
                 <mu-list-item slot="nested"  @click="handleLanguage" :title="$t('messages.language')"/>

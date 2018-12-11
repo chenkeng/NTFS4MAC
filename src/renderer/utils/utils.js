@@ -147,3 +147,14 @@ export function mountDevices(mount_path, link_path) {
         }
     })
 }
+
+export function allRejected(){
+    return new Promise(async(resolve,reject)=>{
+        try{
+            await execShell(`diskutil unmount /Volumes/*`);
+            resolve();
+        }catch(e){
+            reject(e);
+        }
+    })
+}
