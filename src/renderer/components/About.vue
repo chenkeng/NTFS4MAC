@@ -65,9 +65,7 @@ The project has been open source on github and welcomes developers to join and i
 Making address: <a href="javascript:void(0)" @click="open('https://github.com/Sailiy/ntfsx')">chenchaohan@live.com</a>
                    </li>
                 
-                    <li>
-    Thanks to the developers of electron, vue, electronic-vue, Muse-UI, element-UI.
-                </li>
+                    <li>Thanks to the developers of electron, vue, electronic-vue, Muse-UI, element-UI . </li>
                </ul>
                </div>
             </mu-row>
